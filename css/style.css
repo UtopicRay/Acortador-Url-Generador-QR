@@ -1,0 +1,58 @@
+html {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: black;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+form {
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+}
+
+section form label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+section form input {
+    padding: 4px;
+    border: gray solid 1px;
+    border-radius: 8px 0 0 8px;
+    outline-style: none;
+}
+
+section .form .button {
+    padding: 4px;
+    border: black solid 1px;
+    border-radius: 0 8px 8px 0;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section .pasos {
+    display: grid;
+    width: 100%;
+    grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
+}
