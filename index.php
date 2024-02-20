@@ -9,13 +9,30 @@
 <main>
     <h1>Acortador de URLs y Generador de QR</h1>
     <section>
-        <form method="post" class="form" action="generate.php">
-            <label for="acortador">Introduzca la URL</label>
-            <input id="acortador" name="acortador" type="text" placeholder="https\\examples">
-            <button type="submit" class="button">Confirmar</button>
+        <form method="post" class="form">
+            <div class="formulario">
+                <label for="acortador">Introduzca la URL</label>
+                <input id="acortador" name="acortador" type="text" placeholder="https\\examples">
+                <button type="submit" class="button">Confirmar</button>
+            </div>
+            <div class="qr">
+                <?php
+                if (isset($_POST['acortador']) == true && empty($_POST['acortador'] == false)) {
+                    $url = $_POST['acortador'];
+                    $url = filter_var($url, FILTER_SANITIZE_URL);
+                    // Validate url
+                    if (filter_var($url, FILTER_VALIDATE_URL) !== false) {
+                        echo("<img src='qrcode.png' alt='QR-Generado'>");
+                    } else {
+                        echo("<h1>Esta URL no es valida</h1>");
+                    }
+
+                }
+                ?>
+
+            </div>
         </form>
     </section>
-    <img src="qrcode.png" alt="QR-Generado">
     <section>
         <h2> Como usar el Acortador de urls</h2>
         <article class="pasos">
@@ -45,5 +62,6 @@
         </article>
     </section>
 </main>
+<script src="script.js"></script>
 </body>
 </html>
