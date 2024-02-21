@@ -6,12 +6,12 @@ form.addEventListener('submit', function (event) {
 })
 
 function ajax_post() {
-    var url = document.getElementById('acortador').value;
+    var url = document.getElementById('short_url').value;
     var xhr = new XMLHttpRequest();
     // Configurar la solicitud
     xhr.open("POST", "./generate.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    var info = "acortador=" + url;
+    var info = "short_url=" + url;
     // Enviar la solicitud
     xhr.send(info);
 

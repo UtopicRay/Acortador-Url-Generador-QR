@@ -1,14 +1,3 @@
-<?php
-if (isset($_POST['acortador'])) {
-    $urls = file_get_contents('urls.json');
-    $urls = json_decode($urls);
-    $random = substr(sha1(microtime()), 0, 9);
-    if (!isset($urls[$random])) {
-        $urls[$random] = $_POST['acortador'];
-    }
-    file_put_contents('urls.json',json_encode($urls));
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +11,8 @@ if (isset($_POST['acortador'])) {
     <section>
         <form method="post" class="form">
             <div class="formulario">
-                <label for="acortador">Introduzca la URL</label>
-                <input id="acortador" name="acortador" type="text" placeholder="https\\examples">
+                <label for="short_url">Introduzca la URL</label>
+                <input id="short_url" name="short_url" type="text" placeholder="https\\examples">
                 <button type="submit" class="button" onclick="ajax_post()">Confirmar</button>
             </div>
             <div id="qr" class="qr">
