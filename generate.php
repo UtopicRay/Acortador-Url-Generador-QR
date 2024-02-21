@@ -7,18 +7,18 @@ use Endroid\QrCode\Label\LabelAlignment;
 use Endroid\QrCode\Label\Font\NotoSans;
 use Endroid\QrCode\Writer\PngWriter;
 
-function SavePng()
+function SavePng($x)
 {
-    $short_url = $_POST["short_url"];
+    $newURL = "http://localhost/url.php?short_url=$x";
     $result = Builder::create()
         ->writer(new PngWriter())
         ->writerOptions([])
-        ->data($short_url)
+        ->data($newURL)
         ->errorCorrectionLevel(ErrorCorrectionLevel::High)
         ->size(300)
         ->margin(10)
         ->labelText('URL-Acortada')
-        ->labelFont(new NotoSans(20))
+        ->labelFont(new NotoSans(16))
         ->labelAlignment(LabelAlignment::Center)
         ->validateResult(false)
         ->build();
@@ -36,7 +36,7 @@ function GenerarURL()
         $urls[$random] = $_POST['short_url'];
     }
     file_put_contents('urls.json', json_encode($urls));
-    echo "<p>la nueva url es: <a href='/url.php?short_url=$random' target='_blank'>localhost/url.php?short_url=$random<a></p>";
+    return $random;
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -45,9 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $url = filter_var($url, FILTER_SANITIZE_URL);
         // Validate url
         if (filter_var($url, FILTER_VALIDATE_URL) !== false) {
-            GenerarURL();
-            SavePng();
-            echo("<img src='qrcode.png' alt='QR-Generado'>");
+            $random = GenerarURL();
+            SavePng($random);
+            echo("<p>la nueva url es: <a href='/url.php?short_url=$random' target='_blank'>localhost/url.php?short_url=$random<a></p>
+<img src='qrcode.png' alt='QR-Generado'>");
         } else {
             echo("<h1>Esta URL no es valida</h1>");
         }
