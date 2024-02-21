@@ -11,7 +11,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
+    margin-top: 30px;
 }
 
 form {
@@ -31,12 +31,14 @@ section form label {
     margin-right: 10px;
     font-weight: bold;
 }
-section form .formulario{
+
+section form .formulario {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-section form .qr{
+
+section form .qr {
     margin: 20px 0 20px 0;
 }
 
@@ -53,15 +55,21 @@ section .form .button {
     border-radius: 0 8px 8px 0;
 }
 
-section {
+section article {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
-section .pasos {
+section article .pasos {
     display: grid;
     width: 100%;
-    grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+}
+
+section article .pasos .columns {
+    text-align: left;
+    text-justify: distribute;
 }
