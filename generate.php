@@ -9,7 +9,7 @@ use Endroid\QrCode\Writer\PngWriter;
 
 function SavePng($x)
 {
-    $newURL = "http://localhost/url.php?short_url=$x";
+    $newURL = "192.168.173.139/url.php?short_url=$x";
     $result = Builder::create()
         ->writer(new PngWriter())
         ->writerOptions([])
@@ -43,12 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST['short_url']) && empty($_POST['short_url'] == false)) {
         $url = $_POST['short_url'];
         $url = filter_var($url, FILTER_SANITIZE_URL);
-        // Validate url
+// Validate url
         if (filter_var($url, FILTER_VALIDATE_URL) !== false) {
             $random = GenerarURL();
             SavePng($random);
-            echo("<p>la nueva url es: <a href='/url.php?short_url=$random' target='_blank'>localhost/url.php?short_url=$random<a></p>
-<img src='qrcode.png' alt='QR-Generado'>");
+            $ruta ='/url.php?short_url=$random';
+            echo("<p>la nueva url es: <a href='$ruta' target='_blank'>localhost/url.php?short_url=$random<a></p>
+    <img src='qrcode.png' alt='QR-Generado'>");
         } else {
             echo("<h1>Esta URL no es valida</h1>");
         }
