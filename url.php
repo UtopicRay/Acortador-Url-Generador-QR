@@ -6,7 +6,7 @@ if (isset($_GET['short_url'])) {
         $url = "{$url[$_GET['short_url']]}";
         header("Location:{$url}");
     } else {
-        header("Location: index.php");
+        header("Location: index.html");
     }
 } else {
     die('ERROR: NO SE ENCUENTRAN LOS PARRAMETROS REQUERIDOS');
