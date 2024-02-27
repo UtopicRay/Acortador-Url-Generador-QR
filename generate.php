@@ -6,7 +6,6 @@ use Endroid\QrCode\ErrorCorrectionLevel;
 use Endroid\QrCode\Label\LabelAlignment;
 use Endroid\QrCode\Label\Font\NotoSans;
 use Endroid\QrCode\Writer\PngWriter;
-
 function SavePng($x)
 {
     $newURL = "192.168.173.139/url.php?short_url=$x";

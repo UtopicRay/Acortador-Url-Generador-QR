@@ -11,9 +11,14 @@
 </head>
 <body>
 <header class="navbar">
-     <h4>Short-Url+QR</h4>
-     <a>github</a>
- </header>
+    <h4>Short-Url+QR</h4>
+    <a
+            href="https://github.com/UtopicRay/Acortador-Url-Generador-QR"
+            target="_blank"
+            class="button"
+    >github</a
+    >
+</header>
 <main class="container">
     <section>
         <form method="post" class="form">
@@ -21,7 +26,13 @@
                 <h1>Acortador de URLs y Generador de QR</h1>
                 <p>Genera y comparte tus codigos QR y urls personalizada</p>
                 <div class="inputs">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
+                         height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/>
+                        <path d="M21 21l-6 -6"/>
+                    </svg>
                     <input id="short_url" name="short_url" type="text" placeholder="https\\examples">
                     <button type="submit" class="button" onclick="ajax_post()">Confirmar</button>
                 </div>
@@ -74,35 +85,11 @@
     </section>
 </main>
 <footer class="footer">
-    <div class="grid">
-        <div class="enunciado">
-            <h1>Contacto</h1>
-            <p>Sientase libre de llamar!</p>
-        </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="mailto:rayrm2021@gmail.com?subject=Interesado%20en%20sus%20servicios"
-                    ><i class="bx bxs-envelope text-2xl"></i>rayrm2021@gmail.com</a
-                    >
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/ray-rendon-mesa-1948b7260?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BWGSERolORaigToBCXdkJaQ%3D%3D">
-                        <i class="bx bxl-linkedin-square text-2xl"></i>Linkendin</a
-                    >
-                </li>
-                <li>
-                    <a href="https://github.com/dashboard"
-                       target="_blank"
-                    ><i class="bx bxl-github text-2xl"></i>Github</a
-                    >
-                </li>
-                <li>
-                    <a href="https://wa.me/+5358294125"><i class="bx bxl-whatsapp text-2xl"></i>WhatsApp</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <h1>Proyecto de codigo abierto</h1>
+    <a href="https://github.com/UtopicRay/Acortador-Url-Generador-QR"
+       target="_blank"
+    ><i class="bx bxl-github text-2xl"></i>Github</a
+    >
 </footer>
 <script src="script.js"></script>
 </body>

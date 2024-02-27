@@ -10,6 +10,7 @@ function ajax_post() {
     var xhr = new XMLHttpRequest();
     // Configurar la solicitud
     xhr.open("POST", "./generate.php", true);
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     var info = "short_url=" + url;
     // Enviar la solicitud
