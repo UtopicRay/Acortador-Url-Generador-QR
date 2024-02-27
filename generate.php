@@ -17,7 +17,7 @@ function SavePng($x)
         ->errorCorrectionLevel(ErrorCorrectionLevel::High)
         ->size(300)
         ->margin(10)
-        ->labelText('URL-Acortada')
+        ->labelText('NUEVA-URL')
         ->labelFont(new NotoSans(16))
         ->labelAlignment(LabelAlignment::Center)
         ->validateResult(false)
@@ -47,8 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (filter_var($url, FILTER_VALIDATE_URL) !== false) {
             $random = GenerarURL();
             SavePng($random);
-            $ruta ='/url.php?short_url=$random';
-            echo("<p>la nueva url es: <a href='$ruta' target='_blank'>localhost/url.php?short_url=$random<a></p>
+            echo("<p>la nueva url es: <a href='/url.php?short_url=$random' target='_blank'>localhost/url.php?short_url=$random<a></p>
     <img src='qrcode.png' alt='QR-Generado'>");
         } else {
             echo("<h1>Esta URL no es valida</h1>");

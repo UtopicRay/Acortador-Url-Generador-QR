@@ -1,17 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     font-family: Arial, sans-serif;
     background-color: whitesmoke;
     color: black;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 }
 
-main {
-    height: 100%;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    filter: blur(20);
+    background: rgb(255, 255, 255, 0.2);
     width: 100%;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+}
+
+section:nth-child(1) {
+    margin-top: 20px;
+}
+
+.container {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    padding: 8px;
+    margin: 20px auto 40px auto;
 }
 
 form {
@@ -22,9 +46,23 @@ form {
     align-items: center;
 }
 
-section {
-    width: 100%;
-    height: 100%;
+
+section form {
+    margin: auto;
+    padding: 8px;
+    position: relative;
+    color: white;
+}
+
+section form h1 {
+    color: black;
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+section form p {
+    margin-top: 10px;
+    color: black;
 }
 
 section form label {
@@ -34,26 +72,56 @@ section form label {
 
 section form .formulario {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+section form .inputs {
+    padding: 6px;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+}
+
+section form .inputs svg {
+    color: gray;
+    margin-inside: 10px
+}
+
+section form input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline-style: none;
+    font-size: 1rem;
+}
+
+section .form .button {
+    padding: 8px;
+    border: solid 1px;
+    background: #59D5E0;
+    border-radius: 8px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+section .qr {
+    aspect-ratio: auto;
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-section form .qr {
-    margin: 20px 0 20px 0;
-}
-
-section form input {
-    padding: 4px;
-    border: gray solid 1px;
-    border-radius: 8px 0 0 8px;
-    outline-style: none;
-}
-
-section .form .button {
-    padding: 4px;
-    border: black solid 1px;
-    border-radius: 0 8px 8px 0;
-}
 
 section article {
     display: flex;
@@ -63,13 +131,82 @@ section article {
     width: 100%;
 }
 
-section article .pasos {
+section article .enunciado {
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+section article .grid {
+    display: grid;
+    margin: auto;
+    width: 100%;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+
+}
+
+section article .grid .card {
+    border: black solid 2px;
+    border-radius: 8px;
+    text-align: left;
+    text-justify: distribute;
+    padding: 10px;
+}
+
+section article .grid .card h3 {
+    margin: 10px 0;
+}
+
+.circulo {
+    border: black solid 2px;
+    border-radius: 100%;
+}
+
+.footer {
+    background: #211C6A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    width: 100%;
+    height: 100%;
+}
+
+.footer .grid {
     display: grid;
     width: 100%;
     grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+    gap: 4px;
 }
 
-section article .pasos .columns {
-    text-align: left;
-    text-justify: distribute;
+.footer .grid .enunciado {
+    margin: auto;
+}
+
+.footer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+footer .grid ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer .grid .enunciado p {
+    font-weight: lighter;
+}
+
+.footer .grid .enunciado h1 {
+    font-size: 1.4rem;
+}
+
+footer .grid ul li a:hover {
+    color: #74E291;
+    transform: scale(110%);
+    transition: all 150ms ease-in-out;
 }

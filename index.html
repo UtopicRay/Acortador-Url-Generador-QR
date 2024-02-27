@@ -3,56 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <title>Acortador de URLs</title>
+    <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<main>
-    <h1>Acortador de URLs y Generador de QR</h1>
+<header class="navbar">
+     <h4>Short-Url+QR</h4>
+     <a>github</a>
+ </header>
+<main class="container">
     <section>
         <form method="post" class="form">
             <div class="formulario">
-                <label for="short_url">Introduzca la URL</label>
-                <input id="short_url" name="short_url" type="text" placeholder="https\\examples">
-                <button type="submit" class="button" onclick="ajax_post()">Confirmar</button>
-            </div>
-            <div id="qr" class="qr">
+                <h1>Acortador de URLs y Generador de QR</h1>
+                <p>Genera y comparte tus codigos QR y urls personalizada</p>
+                <div class="inputs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                    <input id="short_url" name="short_url" type="text" placeholder="https\\examples">
+                    <button type="submit" class="button" onclick="ajax_post()">Confirmar</button>
+                </div>
             </div>
         </form>
+        <div id="qr" class="qr">
+        </div>
     </section>
     <section>
         <article>
-            <h2> Como usar el Acortador de urls</h2>
-            <div class="pasos">
-                <div class="columns">
-                    <h2>
-                        Paso 1
-                    </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus iure molestias quaerat quo,
-                        reiciendis tenetur voluptate. Animi assumenda atque autem consequuntur corporis dolorem eos est
-                        eveniet fugit hic in ipsam, laborum maiores molestias placeat possimus quibusdam quidem saepe
-                        sed
-                        voluptates?</p>
+            <h2 class="enunciado"> Como usar el Acortador de urls</h2>
+            <div class="grid">
+                <div class="card">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-number-1"
+                         width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/>
+                        <path d="M10 10l2 -2v8"/>
+                    </svg>
+                    <h3>Introduzca su enlace</h3>
+                    <p>copia y pega tu URL larga en el recuadro y haz clic en acortar</p>
                 </div>
-                <div class="columns">
-                    <h2>Paso 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid assumenda blanditiis
-                        consequatur, dolores ducimus earum eius ex excepturi in ipsa ipsam laudantium magni molestias
-                        mollitia natus necessitatibus nemo officia perspiciatis placeat possimus quam quibusdam quos
-                        repellendus, tempora tempore voluptate.</p>
+                <div class="card">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-number-2"
+                         width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/>
+                        <path d="M10 8h3a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h3"/>
+                    </svg>
+                    <h3>Enlace personalizado</h3>
+                    <p>Haga que su enlace sea memorable, de marca y amigables con el SEO mediante alias
+                        personalizados.</p>
                 </div>
-                <div class="columns">
-                    <h2>Paso 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque commodi dolorem
-                        eligendi
-                        error laboriosam nostrum officia quas quo quod sequi, suscipit voluptas, voluptatem? Aperiam
-                        consequatur dignissimos ea explicabo hic id inventore, iusto laborum molestiae numquam officia
-                        porro
-                        quasi quia.</p>
+                <div class="card">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-number-3"
+                         width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/>
+                        <path d="M10 9a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2h2a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1"/>
+                    </svg>
+                    <h3>Comparta y seguir</h3>
+                    <p>utilice su enlace acortado en sus redes sociales, su sitio web o cualquier otro canal y realice
+                        un seguimiento de su rendimiento</p>
                 </div>
             </div>
         </article>
     </section>
 </main>
+<footer class="footer">
+    <div class="grid">
+        <div class="enunciado">
+            <h1>Contacto</h1>
+            <p>Sientase libre de llamar!</p>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="mailto:rayrm2021@gmail.com?subject=Interesado%20en%20sus%20servicios"
+                    ><i class="bx bxs-envelope text-2xl"></i>rayrm2021@gmail.com</a
+                    >
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/ray-rendon-mesa-1948b7260?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BWGSERolORaigToBCXdkJaQ%3D%3D">
+                        <i class="bx bxl-linkedin-square text-2xl"></i>Linkendin</a
+                    >
+                </li>
+                <li>
+                    <a href="https://github.com/dashboard"
+                       target="_blank"
+                    ><i class="bx bxl-github text-2xl"></i>Github</a
+                    >
+                </li>
+                <li>
+                    <a href="https://wa.me/+5358294125"><i class="bx bxl-whatsapp text-2xl"></i>WhatsApp</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
