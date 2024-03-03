@@ -75,7 +75,6 @@ function GenerarURL()
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST['short_url']) && empty($_POST['short_url'] == false)) {
         $url = $_POST['short_url'];
-        $url = filter_var($url, FILTER_SANITIZE_URL);
 // Validate url
         if (validateUrl($url)) {
             $random = GenerarURL();
